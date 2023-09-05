@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: map-get($fonts, 'rubik');
+}
+
+body {
+  padding: 0 60px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  border-radius: 4px;
+  background-color: map-get($colors, 'green');
+  border: 1px solid map-get($colors, 'light-gray1');
+  color: map-get($colors, 'light-gray1');
+  font-family: inherit;
+  padding: $spacing-2x $spacing-6x;
+  transition: all .2s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(94%);
+  }
+}

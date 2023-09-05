@@ -1,0 +1,38 @@
+// Spacing
+$spacing-x: 4px; // 4px
+$spacing-2x: $spacing-x * 2; // 8px
+$spacing-3x: $spacing-x * 3; // 12px
+$spacing-4x: $spacing-x * 4; // 16px
+$spacing-5x: $spacing-x * 5; // 20px
+$spacing-6x: $spacing-x * 6; // 24px
+$spacing-7x: $spacing-x * 7; // 28px
+$spacing-8x: $spacing-x * 8; // 32px
+$spacing-9x: $spacing-x * 9; // 36px
+$spacing-10x: $spacing-x * 10; // 40px
+$spacing-11x: $spacing-x * 11; // 44px
+$spacing-12x: $spacing-x * 12; // 48px
+
+// Color
+$colors: (
+  'dark-gray1': #1f1f1f,
+  'dark-gray2': #404040,
+  'light-gray1': #f4f5f7,
+  'light-gray2': #c4c4c4,
+  'dark-blue1': #003040,
+  'green': #007839,
+);
+
+// Font-size
+$font-size-small: 0.86rem; // 12px
+$font-size-medium: 1rem; // 14px
+$font-size-big: 1rem; // 18px
+$font-size-large: 1.571rem; // 22px
+$font-size-extra: 2.142rem; // 30px
+
+// Fonts
+$fonts: (
+  'rubik': ('Rubik', sans-serif),
+  'arial': (arial, sans-serif),
+);
+
+$height-header: 76px;

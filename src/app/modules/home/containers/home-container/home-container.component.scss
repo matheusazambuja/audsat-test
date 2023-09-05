@@ -1,0 +1,27 @@
+@import 'variables';
+
+:host {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - $height-header);
+    padding-bottom: 48px;
+
+    &__title {
+      color: map-get($colors, 'dark-gray1');
+      font-family: map-get($fonts, 'rubik');
+      font-size: $font-size-extra;
+      margin-bottom: $spacing-2x;
+      text-align: center;
+    }
+
+    &__subtitle {
+      color: map-get($colors, 'dark-gray2');
+      font-family: map-get($fonts, 'rubik');
+      font-size: $font-size-large;
+      text-align: center;
+    }
+  }
+}
