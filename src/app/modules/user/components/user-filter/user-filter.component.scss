@@ -1,0 +1,28 @@
+@import 'variables';
+
+:host {
+  .user-filter {
+    &__title {
+      font-size: 14px;
+      margin-bottom: $spacing-2x;
+    }
+
+    &__form {
+      display: flex;
+      gap: $spacing-4x;
+    }
+  }
+  .form {
+    &__name, &__username, &__email {
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      padding: 6px 12px;
+    }
+
+    &__filter {
+      border-radius: 8px;
+      padding-left: $spacing-9x;
+      padding-right: $spacing-9x;
+    }
+  }
+}

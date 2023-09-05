@@ -1,4 +1,23 @@
-<h2>Lista de usuários</h2>
-<app-user-filter></app-user-filter>
-<!-- Tabela de usuários -->
-<p>user-list works!</p>
+<div class="user-list">
+  <h2 class="user-list__title">Lista de usuários</h2>
+  <app-user-filter></app-user-filter>
+  <!-- Tabela de usuários -->
+  <table class="user-list__grid">
+    <thead>
+      <tr>
+        <th class="grid__column">Nome</th>
+        <th class="grid__column">Username</th>
+        <th class="grid__column">E-mail</th>
+        <th class="grid__column">Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="grid__cell">{{ user.name }}</td>
+        <td class="grid__cell">{{ user.username }}</td>
+        <td class="grid__cell">{{ user.email }}</td>
+        <td class="grid__cell">{{ user.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

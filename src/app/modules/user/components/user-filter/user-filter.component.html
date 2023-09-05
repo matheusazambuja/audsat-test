@@ -1,11 +1,9 @@
 <div class="user-filter">
+  <p class="user-filter__title">Filtrar por:</p>
   <form class="user-filter__form">
-    <span>Filtrar por:</span>
-    <label for="name"></label>
-    <input type="text" name="name" id="name" />
-    <label for="username"></label>
-    <input type="text" name="username" id="username" />
-    <label for="email"></label>
-    <input type="email" name="email" id="email" />
+    <input type="text" [placeholder]="'Nome'" class="form__name" name="name" id="name" />
+    <input type="text" [placeholder]="'Username'" class="form__username" name="username" id="username" />
+    <input type="email" [placeholder]="'E-mail'" class="form__email" name="email" id="email" />
+    <button class="form__filter">Filtrar</button>
   </form>
 </div>

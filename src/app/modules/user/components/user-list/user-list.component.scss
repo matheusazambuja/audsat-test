@@ -1,0 +1,16 @@
+@import 'variables';
+
+:host {
+  .user-list {
+    height: calc(100% - $height-header);
+    margin-top: $spacing-4x;
+
+    &__title {
+      margin-bottom: $spacing-5x;
+    }
+
+    &__grid {
+      margin-top: $spacing-8x;
+    }
+  }
+}

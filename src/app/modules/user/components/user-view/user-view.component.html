@@ -1,0 +1,15 @@
+<div class="user-view">
+  <h2 class="user-view__title">Dados do Ususário:</h2>
+  <div class="user-view__name">
+    <span>Nome:</span>
+    {{ user.name }}
+  </div>
+  <div class="user-view__email">
+    <span>Nome:</span>
+    {{ user.email }}
+  </div>
+  <div class="user-view__address">
+    <span>Nome:</span>
+    {{ user.address.street }} {{ ', ' + user.address.number }} {{ ' | ' + user.address.state }}
+  </div>
+</div>
