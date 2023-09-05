@@ -1,0 +1,20 @@
+@import 'variables';
+
+:host {
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacing-5x 0;
+    height: $height-header;
+    // background-color: map-get($colors, 'dark-blue1');
+
+    &__links {
+      ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: $spacing-4x;
+      }
+    }
+  }
+}

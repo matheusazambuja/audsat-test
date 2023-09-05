@@ -1,0 +1,9 @@
+@import 'variables';
+
+:host {
+  .posts {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    height: calc(100% - $height-header);
+  }
+}

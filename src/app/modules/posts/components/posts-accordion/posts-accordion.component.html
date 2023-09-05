@@ -1,0 +1,11 @@
+<div class="posts-accordion">
+  <div class="posts__item" *ngFor="let post of posts">
+    <div class="item__info">
+      <h3 class="item__title">{{ post.title }}</h3>
+      <p class="item__description">
+        {{ post.description }}
+      </p>
+    </div>
+    <button class="item__delete" (click)="handleDelete(post.id)">Apagar</button>
+  </div>
+</div>
