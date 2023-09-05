@@ -8,15 +8,17 @@ import { IUser } from '../../models/user.interface';
 })
 export class UserViewComponent implements OnInit {
   public user: IUser = {
-    name: 'Matheus Azambuja',
-    username: 'Matheus',
-    email: 'email.gmail.com',
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret',
+    email: 'Sincere@april.biz',
     address: {
-      number: 120,
-      state: 'RS',
-      street: 'Street A',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      city: 'Gwenborough',
+      zipcode: '92998-3874',
     },
-    phone: '11 99999-9999',
+    phone: '1-770-736-8031 x56442',
   };
 
   constructor() {}

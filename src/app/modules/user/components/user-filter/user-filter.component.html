@@ -1,9 +1,16 @@
 <div class="user-filter">
   <p class="user-filter__title">Filtrar por:</p>
-  <form class="user-filter__form">
-    <input type="text" [placeholder]="'Nome'" class="form__name" name="name" id="name" />
-    <input type="text" [placeholder]="'Username'" class="form__username" name="username" id="username" />
-    <input type="email" [placeholder]="'E-mail'" class="form__email" name="email" id="email" />
-    <button class="form__filter">Filtrar</button>
+  <form class="user-filter__form" [formGroup]="form">
+    <input formControlName="name" type="text" [placeholder]="'Nome'" class="form__name" name="name" id="name" />
+    <input
+      formControlName="username"
+      type="text"
+      [placeholder]="'Username'"
+      class="form__username"
+      name="username"
+      id="username"
+    />
+    <input formControlName="email" type="email" [placeholder]="'E-mail'" class="form__email" name="email" id="email" />
+    <button class="form__filter" (click)="handleFilter()">Filtrar</button>
   </form>
 </div>

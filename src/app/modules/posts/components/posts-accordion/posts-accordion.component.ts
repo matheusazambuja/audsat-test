@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IPosts } from '../../models/posts.interface';
+import { IPost } from '../../models/posts.interface';
 
 @Component({
   selector: 'app-posts-accordion',
@@ -7,21 +7,21 @@ import { IPosts } from '../../models/posts.interface';
   styleUrls: ['./posts-accordion.component.scss'],
 })
 export class PostsAccordionComponent {
-  public posts: IPosts[] = [
+  public posts: IPost[] = [
     {
       id: 1,
       title: 'Title 1',
-      description: 'Description 1',
+      body: 'Description 1',
     },
     {
       id: 2,
       title: 'Title 2',
-      description: 'Description 2',
+      body: 'Description 2',
     },
     {
       id: 3,
       title: 'Title 3',
-      description: 'Description 3',
+      body: 'Description 3',
     },
   ];
 

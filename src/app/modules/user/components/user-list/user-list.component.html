@@ -1,6 +1,6 @@
 <div class="user-list">
   <h2 class="user-list__title">Lista de usuários</h2>
-  <app-user-filter></app-user-filter>
+  <app-user-filter (filter)="getUsers($event)"></app-user-filter>
   <!-- Tabela de usuários -->
   <table class="user-list__grid">
     <thead>
