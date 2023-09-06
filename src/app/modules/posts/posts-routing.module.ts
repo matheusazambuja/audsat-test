@@ -4,8 +4,13 @@ import { PostsContainerComponent } from './containers/posts-container/posts-cont
 
 const routes: Routes = [
   {
-    path: '',
-    component: PostsContainerComponent,
+    path: ':id',
+    children: [
+      {
+        path: 'view',
+        component: PostsContainerComponent,
+      },
+    ],
   },
 ];
 

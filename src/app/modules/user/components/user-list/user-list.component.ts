@@ -3,6 +3,7 @@ import { IUser } from '../../models/user.interface';
 import { UserService } from '../../../../core/services/user.service';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -11,11 +12,13 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
 })
 export class UserListComponent implements OnInit, OnDestroy {
   public users: IUser[];
-  private readonly DEBOUNCE_TIME_FILTER = 1000;
 
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) {
     this.getUsers();
   }
 
@@ -34,5 +37,10 @@ export class UserListComponent implements OnInit, OnDestroy {
         console.log(users);
         this.users = users;
       });
+  }
+
+  public handleUserPosts(user: IUser): void {
+    const { id } = user;
+    this.router.navigate([`/posts/${id}/view`]);
   }
 }

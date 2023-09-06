@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-filter',
@@ -13,6 +13,8 @@ export class UserFilterComponent implements OnInit, OnDestroy {
   @Output() filter = new EventEmitter();
 
   private unsubscribe$ = new Subject<void>();
+  private emitter = new Subject<void>();
+  private readonly DEBOUNCE_TIME_FILTER = 400;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -24,7 +26,7 @@ export class UserFilterComponent implements OnInit, OnDestroy {
   public ngOnDestroy(): void {}
 
   public handleFilter(): void {
-    this.filter.emit(this.form.value);
+    this.emitter.next();
   }
 
   private initForm(): void {
@@ -37,5 +39,9 @@ export class UserFilterComponent implements OnInit, OnDestroy {
 
   private initListerners(): void {
     this.form.valueChanges.pipe(takeUntil(this.unsubscribe$)).subscribe(value => console.log);
+
+    this.emitter.pipe(takeUntil(this.unsubscribe$), debounceTime(this.DEBOUNCE_TIME_FILTER)).subscribe(() => {
+      this.filter.emit(this.form.value);
+    });
   }
 }

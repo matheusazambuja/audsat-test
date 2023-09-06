@@ -1,4 +1,4 @@
 <div class="posts">
   <app-user-view></app-user-view>
-  <app-posts-accordion></app-posts-accordion>
+  <app-posts-accordion [posts]="posts" (delete)="handleDelete()"></app-posts-accordion>
 </div>
