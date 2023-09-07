@@ -5,9 +5,10 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { UserModule } from '../user/user.module';
 import { PostsAccordionComponent } from './components/posts-accordion/posts-accordion.component';
 import { CommentsListComponent } from './components/comments-list/comments-list.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [PostsContainerComponent, PostsAccordionComponent, CommentsListComponent],
-  imports: [CommonModule, PostsRoutingModule, UserModule],
+  imports: [CommonModule, PostsRoutingModule, UserModule, SharedModule],
 })
 export class PostsModule {}
