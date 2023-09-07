@@ -1,0 +1,24 @@
+{
+  "logs": [
+    {
+      "action": "DELETE_POST",
+      "time": 1694086975298,
+      "id": 1
+    },
+    {
+      "action": "DELETE_POST",
+      "time": 1694087536777,
+      "id": 2
+    },
+    {
+      "action": "FILTER_USERS",
+      "time": 1694090836718,
+      "id": 3
+    },
+    {
+      "action": "FILTER_USERS",
+      "time": 1694090840764,
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+@import 'variables';
+
+:host {
+  .logs-container {
+    padding: 0 60px;
+    margin-top: $spacing-6x;
+
+    &__title {
+      border-bottom: 1px solid map-get($colors, 'dark-gray1');
+      color: map-get($colors, 'dark-gray1');
+      padding-bottom: $spacing-x;
+      margin-bottom: $spacing-6x;
+    }
+  }
+
+  .log {
+    &__item {
+      border-bottom: 1px solid map-get($colors, 'light-gray2');
+      margin-bottom: $spacing-4x;
+      padding: 0 $spacing-x;
+      padding-bottom: $spacing-3x;
+    }
+
+    &__action, &__date {
+      color: map-get($colors, 'dark-gray1');
+      padding-left: $spacing-x;
+      padding-bottom: $spacing-3x;
+      width: fit-content;
+      word-wrap: break-word;
+      display: flex;
+      align-items: baseline;
+      gap: $spacing-2x;
+
+      span {
+        font-weight: 600;
+      }
+
+      p {
+        font-size: $font-size-small;
+        margin-top: $spacing-x;
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output, numberAttribute } from '@angular/core';
 import { IPost } from '../../models/posts.interface';
 import { PostService } from '../../../../core/services/post.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil, tap } from 'rxjs';
 import { PostsAccordionService } from './posts-accordion.service';
+import { AdminLogsService } from '../../../../core/services/admin-logs.service';
+import { LogAction } from '../../../../core/constants/log-action.type.enum';
 
 @Component({
   selector: 'app-posts-accordion',
@@ -15,10 +17,12 @@ export class PostsAccordionComponent implements OnInit {
 
   public currentExpanded: number | null;
   private unsubscribe$ = new Subject<void>();
+  private readonly DELETE_POST_ACTION = LogAction.DELETE_POST;
 
   constructor(
     private postsAccordionService: PostsAccordionService,
     private postService: PostService,
+    private adminLogsService: AdminLogsService,
   ) {}
 
   public ngOnInit(): void {
@@ -33,7 +37,12 @@ export class PostsAccordionComponent implements OnInit {
 
     this.postService
       .deletePost(id)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        tap(() => {
+          this.adminLogsService.setAdminAction(this.DELETE_POST_ACTION);
+        }),
+      )
       .subscribe(() => {
         this.delete.emit();
         this.postsAccordionService.setCurrentExpanded(null);

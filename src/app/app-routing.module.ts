@@ -23,6 +23,10 @@ const routes: Routes = [
         loadChildren: () => import('./modules/posts/posts.module').then(m => m.PostsModule),
       },
       {
+        path: 'logs',
+        loadChildren: () => import('./modules/logs/logs.module').then(m => m.LogsModule),
+      },
+      {
         path: '**',
         redirectTo: '/home',
       },
