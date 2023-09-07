@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     height: calc(100% - $height-header);
+    padding: 0 $spacing-8x;
     padding-bottom: 48px;
 
     &__title {
@@ -15,6 +16,10 @@
       font-size: $font-size-extra;
       margin-bottom: $spacing-2x;
       text-align: center;
+
+      @media screen and (max-width: 720px) {
+        font-size: $font-size-large;
+      }
     }
 
     &__subtitle {
@@ -22,6 +27,10 @@
       font-family: map-get($fonts, 'rubik');
       font-size: $font-size-large;
       text-align: center;
+
+      @media screen and (max-width: 720px) {
+        font-size: $font-size-big;
+      }
     }
   }
 }

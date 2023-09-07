@@ -1,3 +1,12 @@
+// Font-size
+$font-size-small-extra: 0.625rem; // 10px
+$font-size-small: 0.86rem; // 12px
+$font-size-medium: 1rem; // 14px
+$font-size-big: 1rem; // 18px
+$font-size-big-extra: 1.25rem; // 20px
+$font-size-large: 1.571rem; // 22px
+$font-size-extra: 2.142rem; // 30px
+
 // Spacing
 $spacing-x: 4px; // 4px
 $spacing-2x: $spacing-x * 2; // 8px
@@ -26,14 +35,6 @@ $colors: (
   'light-green1': #e6edea,
   'green': #007839,
 );
-
-// Font-size
-$font-size-small: 0.86rem; // 12px
-$font-size-medium: 1rem; // 14px
-$font-size-big: 1rem; // 18px
-$font-size-big-extra: 1.25rem; // 20px
-$font-size-large: 1.571rem; // 22px
-$font-size-extra: 2.142rem; // 30px
 
 // Fonts
 $fonts: (

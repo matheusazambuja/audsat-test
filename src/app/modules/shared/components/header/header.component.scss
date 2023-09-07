@@ -8,6 +8,12 @@
     height: $height-header;
     background-color: map-get($colors, 'dark-blue1');
 
+    @media screen and (max-width: 620px) {
+      flex-direction: column;
+      align-items: center;
+      height: fit-content;
+    }
+
     &__logo {
       img {
         width: 140px;
@@ -16,14 +22,20 @@
     }
 
     &__links {
+      @media screen and (max-width: 620px) {
+        margin-top: $spacing-4x;
+      }
+
       ul {
         padding: 0;
         margin: 0;
         display: flex;
         gap: $spacing-4x;
+        transition: .2s;
 
         a {
-          padding: $spacing-2x $spacing-8x;
+        transition: .2s;
+        padding: $spacing-2x $spacing-8x;
         }
       }
     }

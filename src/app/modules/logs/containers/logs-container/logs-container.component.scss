@@ -4,6 +4,7 @@
   .logs-container {
     padding: 0 60px;
     margin-top: $spacing-6x;
+    padding-bottom: $spacing-12x;
 
     &__title {
       border-bottom: 1px solid map-get($colors, 'dark-gray1');

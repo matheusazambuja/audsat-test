@@ -23,7 +23,10 @@ export class UserFilterComponent implements OnInit, OnDestroy {
     this.initListerners();
   }
 
-  public ngOnDestroy(): void {}
+  public ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
   public handleFilter(): void {
     this.emitter.next();

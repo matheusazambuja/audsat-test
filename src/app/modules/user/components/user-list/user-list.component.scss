@@ -12,20 +12,25 @@
     &__title {
       margin-bottom: $spacing-5x;
       padding-bottom: $spacing-x;
+      font-size: $font-size-large;
       width: 100%;
 
       border-bottom: 1px solid map-get($colors, 'light-gray2');
       color: map-get($colors, 'dark-gray1');
+
+      @media screen and (max-width: 720px) {
+        font-size: $font-size-big-extra;
+      }
     }
 
     &__table {
       margin-top: $spacing-8x;
       border-spacing: 0;
       width: 100%;
-      padding-bottom: $spacing-8x;
+      padding-bottom: 96px;
 
       tbody tr {
-        transition: filter .2s;
+        transition: all .2s;
 
         &:nth-child(odd) {
           background-color: transparent;
@@ -42,8 +47,6 @@
             filter: brightness(90%);
           }
         }
-
-
       }
     }
   }
@@ -55,6 +58,12 @@
       background-color: map-get($colors, 'dark-gray2');
       color: map-get($colors, 'light-gray1');
       font-weight: 400;
+      transition: all .2s;
+
+      @media screen and (max-width: 720px) {
+        padding: $spacing-3x $spacing-4x $spacing-3x $spacing-2x;
+        font-size: $font-size-small;
+      }
     }
 
     &__cell {
@@ -62,6 +71,13 @@
       font-size: $font-size-small;
       color: map-get($colors, 'dark-gray1');
       text-align: left;
+      min-width: 36px;
+      transition: all .2s;
+
+      @media screen and (max-width: 720px) {
+        font-size: $font-size-small-extra;
+        padding: $spacing-3x $spacing-4x $spacing-3x $spacing-x;
+      }
 
       &:hover {
         cursor: pointer;

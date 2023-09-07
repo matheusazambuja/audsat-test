@@ -1,0 +1,14 @@
+@import 'variables';
+
+:host {
+  .footer {
+    display: flex;
+    justify-content: center;
+    padding: $spacing-4x;
+    background-color: map-get($colors, 'dark-blue1');
+    color: map-get($colors, 'light-gray1');
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
