@@ -1,9 +1,10 @@
-<div class="comments-list">
+<div class="comment-list">
   <ng-container *ngFor="let comment of comments">
-    <div style="padding: 12px">
-      {{ comment.id }}
-      {{ comment.name }}
-      {{ comment.body }}
+    <div class="comment-list__item">
+      <h3 class="comment-list__title">{{ comment.email }}</h3>
+      <p class="comment-list__description">
+        {{ comment.body }}
+      </p>
     </div>
   </ng-container>
 </div>

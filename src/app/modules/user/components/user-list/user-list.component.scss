@@ -4,30 +4,64 @@
   .user-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: calc(100% - $height-header);
-    margin-top: $spacing-4x;
+    width: 100%;
+    padding: 0 60px;
+    padding-top: $spacing-10x;
 
     &__title {
       margin-bottom: $spacing-5x;
+      padding-bottom: $spacing-x;
+      width: 100%;
+
+      border-bottom: 1px solid map-get($colors, 'light-gray2');
+      color: map-get($colors, 'dark-gray1');
     }
 
     &__table {
       margin-top: $spacing-8x;
       border-spacing: 0;
+      width: 100%;
+      padding-bottom: $spacing-8x;
 
       tbody tr {
+        transition: filter .2s;
+
         &:nth-child(odd) {
-          background-color: #4C8BF5;
-          color: #fff;
+          background-color: transparent;
+
+          &:hover {
+            filter: brightness(20%);
+          }
         }
+
+        &:nth-child(even) {
+          background-color: map-get($colors, 'light-gray2');
+
+          &:hover {
+            filter: brightness(90%);
+          }
+        }
+
+
       }
     }
   }
 
   .table {
+    &__column {
+      text-align: left;
+      padding: $spacing-4x $spacing-4x $spacing-4x $spacing-2x;
+      background-color: map-get($colors, 'dark-gray2');
+      color: map-get($colors, 'light-gray1');
+      font-weight: 400;
+    }
+
     &__cell {
-      padding: $spacing-3x $spacing-4x;
+      padding: $spacing-4x $spacing-4x $spacing-4x $spacing-2x;
+      font-size: $font-size-small;
+      color: map-get($colors, 'dark-gray1');
+      text-align: left;
 
       &:hover {
         cursor: pointer;

@@ -3,26 +3,48 @@
 :host {
   .user-filter {
     &__title {
-      font-size: 14px;
+      color: map-get($colors, 'dark-gray1');
+      font-size: $font-size-medium;
       margin-bottom: $spacing-2x;
     }
 
     &__form {
       display: flex;
-      gap: $spacing-4x;
+      gap: $spacing-3x;
+      width: 100%;
+      height: 100%;
     }
   }
   .form {
     &__name, &__username, &__email {
-      border: 1px solid #aaa;
+      background-color: transparent;
+      border: 1px solid map-get($colors, 'light-gray2');
       border-radius: 4px;
-      padding: 6px 12px;
+      font-family: map-get($fonts, 'rubik');
+      font-size: $font-size-small;
+      min-width: 100px;
+      padding: $spacing-2x $spacing-3x;
+      transition: border-color .2s;
+
+      &:hover {
+        border-color: map-get($colors, 'light-gray3');
+      }
+
+      &:focus {
+        border-color: map-get($colors, 'light-gray3');
+        outline: map-get($colors, 'light-gray3');
+      }
+    }
+
+    &__email {
+      width: 260px;
     }
 
     &__filter {
-      border-radius: 8px;
+      border-radius: 4px;
       padding-left: $spacing-9x;
       padding-right: $spacing-9x;
+      margin-left: $spacing-3x;
     }
   }
 }

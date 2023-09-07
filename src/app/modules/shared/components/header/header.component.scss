@@ -4,9 +4,16 @@
   .menu {
     display: flex;
     justify-content: space-between;
-    padding: $spacing-5x 0;
+    padding: $spacing-5x $spacing-10x;
     height: $height-header;
-    // background-color: map-get($colors, 'dark-blue1');
+    background-color: map-get($colors, 'dark-blue1');
+
+    &__logo {
+      img {
+        width: 140px;
+        height: 100%;
+      }
+    }
 
     &__links {
       ul {
@@ -14,6 +21,10 @@
         margin: 0;
         display: flex;
         gap: $spacing-4x;
+
+        a {
+          padding: $spacing-2x $spacing-8x;
+        }
       }
     }
   }

@@ -25,6 +25,10 @@ export class UserService {
     return this.http.get<IUser[]>(`${this.BASE_USER_API_URL}`, { params }).pipe(catchError(() => of([])));
   }
 
+  public getUser(id: number): Observable<IUser> {
+    return this.http.get<IUser>(`${this.BASE_USER_API_URL}/${id}`).pipe(catchError(() => of({} as IUser)));
+  }
+
   private formatParams(params: HttpParams): HttpParams {
     let paramsWithValue = new HttpParams();
     params.keys().forEach(key => {

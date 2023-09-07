@@ -14,24 +14,25 @@ html, body {
 }
 
 body {
-  padding: 0 60px;
+  background-color: map-get($colors, 'light-blue3');
 }
 
 a {
   text-decoration: none;
   color: inherit;
   font-family: inherit;
+  font-size: $font-size-small;
   height: 100%;
   width: 100%;
 }
 
-button {
-  border-radius: 4px;
+.button {
+  border: 0;
+  border-radius: 2px;
   background-color: map-get($colors, 'green');
-  border: 1px solid map-get($colors, 'light-gray1');
   color: map-get($colors, 'light-gray1');
   font-family: inherit;
-  padding: $spacing-2x $spacing-6x;
+  padding: $spacing-x $spacing-7x;
   transition: all .2s;
 
   &:hover {

@@ -1,15 +1,17 @@
 <div class="user-view">
-  <h2 class="user-view__title">Dados do Ususário:</h2>
-  <div class="user-view__name">
-    <span>Nome:</span>
-    {{ user.name }}
-  </div>
-  <div class="user-view__email">
-    <span>Nome:</span>
-    {{ user.email }}
-  </div>
-  <div class="user-view__address">
-    <span>Nome:</span>
-    {{ user.address.street }} {{ ', ' + user.address.suite }} {{ ' | ' + user.address.city }}
+  <h2 class="user-view__title">Dados do Usuário:</h2>
+  <div *ngIf="user" class="user-view__info">
+    <div class="user-view__name">
+      <span>Nome:</span>
+      <p>{{ user.name }}</p>
+    </div>
+    <div class="user-view__email">
+      <span>E-mail:</span>
+      <p>{{ user.email }}</p>
+    </div>
+    <div class="user-view__address">
+      <span>Endereço:</span>
+      <p>{{ user.address.street }}{{ ', ' + user.address.suite }} {{ ' | ' + user.address.city }}</p>
+    </div>
   </div>
 </div>

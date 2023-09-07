@@ -14,11 +14,16 @@ $spacing-12x: $spacing-x * 12; // 48px
 
 // Color
 $colors: (
-  'dark-gray1': #1f1f1f,
+  'dark-gray1': #292929,
   'dark-gray2': #404040,
   'light-gray1': #f4f5f7,
-  'light-gray2': #c4c4c4,
+  'light-gray2': #c7cdca,
+  'light-gray3': #868e96,
+  'light-blue1': #c6d1d3,
+  'light-blue2': #a7b2b4,
+  'light-blue3': #f7fcfd,
   'dark-blue1': #003040,
+  'light-green1': #e6edea,
   'green': #007839,
 );
 
@@ -26,6 +31,7 @@ $colors: (
 $font-size-small: 0.86rem; // 12px
 $font-size-medium: 1rem; // 14px
 $font-size-big: 1rem; // 18px
+$font-size-big-extra: 1.25rem; // 20px
 $font-size-large: 1.571rem; // 22px
 $font-size-extra: 2.142rem; // 30px
 

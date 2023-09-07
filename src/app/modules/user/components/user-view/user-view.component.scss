@@ -1,0 +1,36 @@
+@import 'variables';
+
+:host {
+  .user-view {
+    border-right: 1px solid map-get($colors, 'light-gray2');
+    padding: 0 $spacing-6x;
+    padding-right: 0;
+    height: 100%;
+
+    &__title {
+      color: map-get($colors, 'dark-gray1');
+    }
+
+    &__info {
+      margin-top: $spacing-5x;
+      width: 88%;
+    }
+
+    &__name, &__email, &__address {
+      color: map-get($colors, 'dark-gray1');
+      padding-left: $spacing-x;
+      padding-bottom: $spacing-3x;
+      width: fit-content;
+      word-wrap: break-word;
+
+      span {
+        font-weight: 600;
+      }
+
+      p {
+        font-size: $font-size-small;
+        margin-top: $spacing-x;
+      }
+    }
+  }
+}

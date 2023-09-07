@@ -3,7 +3,9 @@
 :host {
   .posts {
     display: grid;
-    grid-template-columns: 5fr 7fr;
+    grid-template-columns: 4fr 8fr;
+    gap: $spacing-10x;
     height: calc(100% - $height-header);
+    margin-top: $spacing-7x;
   }
 }

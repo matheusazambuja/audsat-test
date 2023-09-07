@@ -1,0 +1,55 @@
+@import 'variables';
+
+:host {
+  .posts {
+    display: flex;
+    flex-direction: column;
+    margin-right: $spacing-10x;
+
+    &__item {
+      display: flex;
+      gap: $spacing-10x;
+      border: 1px solid map-get($colors, 'light-gray3');
+      border-radius: 4px;
+      padding: $spacing-4x;
+      background-color: transparent;
+      transition: filter .2s;
+      margin-bottom: $spacing-4x;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(94%);
+      }
+
+      &--without-border-bottom {
+        border-bottom: 0;
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
+      }
+    }
+
+    ::ng-deep app-comments-list {
+      margin-top: -20px;
+    }
+  }
+
+  .item {
+    &__title {
+      margin-bottom: $spacing-3x;
+      color: map-get($colors, 'dark-gray1');
+      font-size: $font-size-big-extra;
+    }
+
+    &__description {
+      font-size: $font-size-medium;
+      color: map-get($colors, 'dark-gray2');
+      padding: 0 $spacing-x;
+    }
+
+    &__button-delete {
+      display: flex;
+      align-self: center;
+      padding: $spacing-2x $spacing-8x;
+    }
+  }
+}
