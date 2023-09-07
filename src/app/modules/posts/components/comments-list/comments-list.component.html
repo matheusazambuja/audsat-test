@@ -1,6 +1,6 @@
 <div class="comment-list">
-  <ng-container *ngFor="let comment of comments">
-    <div class="comment-list__item">
+  <ng-container *ngFor="let comment of comments; let i = index">
+    <div [id]="'comment-' + i" class="comment-list__item">
       <h3 class="comment-list__title">{{ comment.email }}</h3>
       <p class="comment-list__description">
         {{ comment.body }}

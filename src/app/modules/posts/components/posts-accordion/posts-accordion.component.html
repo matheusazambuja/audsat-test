@@ -1,6 +1,7 @@
 <div class="posts">
-  <ng-container *ngFor="let post of posts">
+  <ng-container *ngFor="let post of posts; let i = index">
     <div
+      [id]="'post-item-' + i"
       [ngClass]="{ 'posts__item--without-border-bottom': currentExpanded === post.id }"
       class="posts__item"
       (click)="toggleExpandedState(post.id, $event)"
@@ -11,7 +12,7 @@
           {{ post.body }}
         </p>
       </div>
-      <button [id]="'post-item-' + post.id" class="item__button-delete button" (click)="handleDelete(post.id, $event)">
+      <button [id]="'button-delete-' + i" class="item__button-delete button" (click)="handleDelete(post.id, $event)">
         Apagar
       </button>
     </div>

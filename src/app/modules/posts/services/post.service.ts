@@ -24,7 +24,6 @@ export class PostService {
 
         return response.filter(post => idsPostsNotDeleted.includes(post.id));
       }),
-      tap(console.log),
       catchError(() => of([])),
     );
   }

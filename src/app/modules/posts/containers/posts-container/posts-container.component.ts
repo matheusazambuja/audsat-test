@@ -22,7 +22,7 @@ export class PostsContainerComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit(): void {
-    this.userId = Number(this.activatedRoute.snapshot.paramMap.get('id') || null);
+    this.userId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.loadPostsData();
   }
 
