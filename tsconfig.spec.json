@@ -4,9 +4,10 @@
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
     "types": [
-      "jest"
+      "jest", "node"
     ],
     "target": "ES6",
+    "esModuleInterop": true,
   },
   "include": [
     "src/**/*.spec.ts",

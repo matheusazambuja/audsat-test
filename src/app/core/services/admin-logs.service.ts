@@ -7,18 +7,12 @@ import { LogsService } from '../../modules/logs/services/logs.service';
   providedIn: 'root',
 })
 export class AdminLogsService {
-  private readonly adminLog$ = new Subject<LogAction>();
-  private readonly adminLog: Observable<LogAction> = this.adminLog$.asObservable();
-
-  private readonly DEBOUNCE_TIME = 300;
+  private adminLog$ = new Subject<LogAction>();
+  private adminLog: Observable<LogAction>;
 
   constructor(private logsService: LogsService) {
-    this.adminLog
-      .pipe(
-        debounceTime(this.DEBOUNCE_TIME),
-        switchMap(action => this.logsService.createLog(action)),
-      )
-      .subscribe();
+    this.adminLog = this.adminLog$.asObservable();
+    this.adminLog.pipe(switchMap(action => this.logsService.createLog(action))).subscribe();
   }
 
   public setAdminAction(action: LogAction): void {
