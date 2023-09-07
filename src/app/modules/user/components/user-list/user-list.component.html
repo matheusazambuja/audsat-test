@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users" (click)="handleUserPosts(user)">
+      <tr [id]="'user-item-' + i" *ngFor="let user of users; let i = index" (click)="handleUserPosts(user)">
         <td class="table__cell">{{ user.name }}</td>
         <td class="table__cell">{{ user.username }}</td>
         <td class="table__cell">{{ user.email }}</td>

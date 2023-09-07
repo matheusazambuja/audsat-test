@@ -3,15 +3,15 @@
   <div *ngIf="user" class="user-view__info">
     <div class="user-view__name">
       <span>Nome:</span>
-      <p>{{ user.name }}</p>
+      <p id="user-name">{{ user.name }}</p>
     </div>
     <div class="user-view__email">
       <span>E-mail:</span>
-      <p>{{ user.email }}</p>
+      <p id="user-email">{{ user.email }}</p>
     </div>
     <div class="user-view__address">
       <span>Endereço:</span>
-      <p>{{ user.address.street }}{{ ', ' + user.address.suite }} {{ ' | ' + user.address.city }}</p>
+      <p id="user-address">{{ user.address.street }}{{ ', ' + user.address.suite }} {{ ' | ' + user.address.city }}</p>
     </div>
   </div>
 </div>

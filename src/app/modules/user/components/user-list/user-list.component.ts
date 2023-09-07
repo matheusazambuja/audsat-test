@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, takeUntil, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AdminLogsService } from '../../../../core/services/admin-logs.service';
-import { LogAction } from 'src/app/core/constants/log-action.type.enum';
+import { LogAction } from '../../../../core/constants/log-action.type.enum';
 
 @Component({
   selector: 'app-user-list',

@@ -38,8 +38,6 @@ export class UserFilterComponent implements OnInit, OnDestroy {
   }
 
   private initListerners(): void {
-    this.form.valueChanges.pipe(takeUntil(this.unsubscribe$)).subscribe(value => console.log);
-
     this.emitter.pipe(takeUntil(this.unsubscribe$), debounceTime(this.DEBOUNCE_TIME_FILTER)).subscribe(() => {
       this.filter.emit(this.form.value);
     });
