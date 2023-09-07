@@ -1,27 +1,70 @@
 # AudsatTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+Este projeto foi inicializado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.1.
 
-## Development server
+## Tecnologias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+As seguintes ferramentas foram utilizadas para criar esse projeto:
 
-## Code scaffolding
+- [Angular](https://angular.io/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/)
+- [JSONServer](https://github.com/typicode/json-server)
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+- [ESlint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [VSCode](https://code.visualstudio.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Desafios
 
-## Build
+- Utilizado LazyLoad para os módulos roteados
+- Utilizado JSON Server para persistir as ações do Administrador
+- Utilizado JSONPlaceholder para buscar os dados apresentados no projeto
+- Adicionado teste unitários com Jest
+- Usado service com BehaviorSubject para controlar/detectar as ações do usuário e persistir as ações
+- Usado operador takeUntil do RxJS para se desenscrever das assisnaturas dos Observables automaticamente na destruição do componente
+- Utilizado SAS para estilização
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💻 Primeiros passos
+
+### Requisitos
+
+**Clone o projeto**
+
+```bash
+$ git clone https://github.com/matheusazambuja/audsat-test.git
+```
+
+## Iniciar
+
+**Siga os passos abaixo**
+
+Para iniciar a aplicação, use os seguintes comandos:
+
+```bash
+# - Se você tem instalado o Yarn
+# Instalação de dependências
+$ yarn
+# Inicia o backend JSON Server
+$ yarn json-server:start
+# Rodar a aplicação
+$ yarn start
+```
+
+```bash
+# - Se você tem instalado o NPM
+# Instalação de dependências
+$ npm install
+# Inicia o backend JSON Server
+$ npm run json-server:start
+# Rodar a aplicação
+$ npm run start
+```
+
+A aplicação vai estar disponível para acessar em `http://localhost:4200/`
+
+---
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Rodar `yarn test` para executar os teste unitários via [Jest](https://jestjs.io/).
