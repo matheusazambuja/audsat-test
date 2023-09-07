@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.scss'],
 })
-export class HomeContainerComponent {}
+export class HomeContainerComponent {
+  public title = 'Bem vindo(a) ao teste de front-end Audsat';
+  public name = 'Matheus Azambuja';
+}

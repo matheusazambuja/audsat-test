@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="logs-container">
   <h2 class="logs-container__title">Logs</h2>
-  <ng-container *ngFor="let log of logs">
-    <div class="log__item">
+  <ng-container *ngFor="let log of logs; let i = index">
+    <div [id]="'log-item-' + i" class="log__item">
       <div class="log__action">
         <span>Ação:</span>
         <p>{{ log.action }}</p>

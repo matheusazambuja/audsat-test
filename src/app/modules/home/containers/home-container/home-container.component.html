@@ -1,5 +1,7 @@
 <app-header></app-header>
 <div class="home">
-  <h1 class="home__title">Bem vindo(a) ao teste de front-end Audsat</h1>
-  <h2 class="home__subtitle">Teste realizado por <strong>Matheus Azambuja</strong> em <strong>07/09/2023</strong></h2>
+  <h1 [id]="'title'" class="home__title">{{ title }}</h1>
+  <h2 [id]="'subtitle'" class="home__subtitle">
+    Teste realizado por <strong>{{ name }}</strong> em <strong>07/09/2023</strong>
+  </h2>
 </div>
