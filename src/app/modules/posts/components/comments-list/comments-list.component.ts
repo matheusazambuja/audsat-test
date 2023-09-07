@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { PostService } from '../../../../core/services/post.service';
 import { Subject, takeUntil } from 'rxjs';
-import { IComment } from 'src/app/core/models/comment.interface';
+import { IComment } from 'src/app/modules/posts/models/comment.interface';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-comments-list',

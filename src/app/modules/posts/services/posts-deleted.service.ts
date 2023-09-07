@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PostService } from './post.service';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

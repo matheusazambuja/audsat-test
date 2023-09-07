@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { IPost } from '../../models/posts.interface';
-import { PostService } from '../../../../core/services/post.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-posts-container',

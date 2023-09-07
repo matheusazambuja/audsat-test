@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, OnInit, Output, numberAttribute } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IPost } from '../../models/posts.interface';
-import { PostService } from '../../../../core/services/post.service';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { PostsAccordionService } from './posts-accordion.service';
 import { AdminLogsService } from '../../../../core/services/admin-logs.service';
 import { LogAction } from '../../../../core/constants/log-action.type.enum';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-posts-accordion',
