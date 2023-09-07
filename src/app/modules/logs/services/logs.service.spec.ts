@@ -5,6 +5,7 @@ import { LogsService } from './logs.service';
 import { LogAction } from '../../../core/constants/log-action.type.enum';
 import { ILog } from '../models/log.interface';
 import { logsMock } from '../../../../testing/mocks/logs.mock';
+import { HttpStatusCode } from '@angular/common/http';
 
 const BASE_API_URL = 'http://localhost:3000';
 
@@ -40,6 +41,23 @@ describe('LogsService', () => {
     expect(result.request.method).toEqual('GET');
 
     result.flush(logsMock);
+  });
+
+  it('should throw and error when not fetch logs', done => {
+    service.getLogs().subscribe(response => {
+      // Assert
+      expect(response).toEqual([]);
+      done();
+    });
+
+    // Action
+    const result = httpMock.expectOne(`${BASE_API_URL}/logs`);
+    expect(result.request.method).toEqual('GET');
+
+    result.error(new ErrorEvent('Get posts failed'), {
+      status: HttpStatusCode.InternalServerError,
+      statusText: 'Internal Server Error',
+    });
   });
 
   it('should create the log', done => {

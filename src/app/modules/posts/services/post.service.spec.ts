@@ -6,6 +6,7 @@ import { PostsDeletedStateService } from './posts-deleted.service';
 import { of } from 'rxjs';
 import { postMocks } from '../../../../testing/mocks/posts.mock';
 import { commentsMocks } from '../../../../testing/mocks/comments.mock';
+import { HttpStatusCode } from '@angular/common/http';
 
 const BASE_API_URL = 'https://jsonplaceholder.typicode.com';
 const postMock = postMocks[0];
@@ -53,6 +54,23 @@ describe('PostService', () => {
     result.flush(postMocks);
   });
 
+  it('should throw and error when not fetch posts', done => {
+    // Arrange
+    service.getPostsByUser(idUserMock).subscribe(response => {
+      expect(response).toEqual([]);
+      done();
+    });
+
+    // Action
+    const result = httpMock.expectOne(`${BASE_API_URL}/users/${idUserMock}/posts`);
+    expect(result.request.method).toEqual('GET');
+
+    result.error(new ErrorEvent('Get posts failed'), {
+      status: HttpStatusCode.InternalServerError,
+      statusText: 'Internal Server Error',
+    });
+  });
+
   it('should delete post', done => {
     // Action
     service.deletePost(idPostMock).subscribe(response => {
@@ -80,6 +98,23 @@ describe('PostService', () => {
     expect(result.request.method).toEqual('GET');
 
     result.flush(commentsMocks);
+  });
+
+  it('should throw and error when not fetch comments', done => {
+    // Action
+    service.getCommentsByPost(idPostMock).subscribe(response => {
+      expect(response).toEqual([]);
+      done();
+    });
+
+    // Action
+    const result = httpMock.expectOne(`${BASE_API_URL}/posts/${idPostMock}/comments`);
+    expect(result.request.method).toEqual('GET');
+
+    result.error(new ErrorEvent('Get comments failed'), {
+      status: HttpStatusCode.InternalServerError,
+      statusText: 'Internal Server Error',
+    });
   });
 
   it('should delete comment by post', done => {

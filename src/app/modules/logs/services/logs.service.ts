@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { ILog } from '../models/log.interface';
 import { LogAction } from '../../../core/constants/log-action.type.enum';
 
@@ -13,7 +13,7 @@ export class LogsService {
   constructor(private http: HttpClient) {}
 
   public getLogs(): Observable<ILog[]> {
-    return this.http.get<ILog[]>(`${this.BASE_API_URL}/logs`);
+    return this.http.get<ILog[]>(`${this.BASE_API_URL}/logs`).pipe(catchError(() => of([])));
   }
 
   public createLog(action: LogAction): Observable<ILog> {

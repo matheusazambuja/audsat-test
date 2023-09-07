@@ -37,7 +37,7 @@ export class PostService {
   }
 
   public getCommentsByPost(id: number): Observable<IComment[]> {
-    return this.http.get<IComment[]>(`${this.BASE_API_URL}/posts/${id}/comments`);
+    return this.http.get<IComment[]>(`${this.BASE_API_URL}/posts/${id}/comments`).pipe(catchError(() => of([])));
   }
 
   public deleteCommentByPost(id: number): Observable<{}> {
