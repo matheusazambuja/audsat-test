@@ -9,6 +9,7 @@
 
     &__title {
       color: map-get($colors, 'dark-gray1');
+      font-size: $font-size-large;
     }
 
     &__info {

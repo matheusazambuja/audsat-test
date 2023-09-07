@@ -12,8 +12,8 @@ import { PostService } from '../../../../core/services/post.service';
 })
 export class PostsContainerComponent implements OnInit, OnDestroy {
   public posts: IPost[];
+  public userId: number;
 
-  private userId: number;
   private unsubscribe$ = new Subject<void>();
 
   constructor(
